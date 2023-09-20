@@ -1,0 +1,7 @@
+# When uploads, it doesnt include these files
+
+# Ignore virtual environment
+venv/
+
+# Ignore pycache
+__pycache__/
