@@ -1,5 +1,5 @@
-Kekkonmi
-An all in one product to help couples plan for their weddings and execute the plan by reducing the planning time, expenses and stress.
+<h1>Kekkonmi</h1>
+<h5>An all in one product to help couples plan for their weddings and execute the plan by reducing the planning time, expenses and stress.</h5>
 
 
 Product Experience
