@@ -7,26 +7,28 @@
   <!-- Left Side 2/3 Column -->
   <div class="col-12 col-lg-8 order-1 order-lg-0">
 
+    {% for post in posts %}
     <!-- Card -->
     <div class="card mt-3">
       <div class="row g-0">
         <!-- IMG -->
         <div class="col-md-4">
-          <img class="card-img-top" src="https://s7d1.scene7.com/is/image/marriotts7prod/si-tyosi-glasschapel-new-mar2022-24843:Classic-Hor?wid=1215&fit=constrain" alt="sheraton" />
+          <img class="card-img-top" src="{{ post.image }}" alt="sheraton" />
         </div>
         <!-- End IMG -->
         <div class="col-md-8">
           <div class="card-body">
-            <h5 class="card-title">Sheraton Grande Tokyo Bay</h5>
+            <h5 class="card-title">{{ post.title }}</h5>
             <h6 class="card-subtitle">Urayasu, Chiba</h6>
-            <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam illum nemo accusamus sequi officiis praesentium dolore aspernatur beatae facilis similique consectetur blanditiis in adipisci vel illo soluta iure, nihil pariatur.</p>
-
+            <p class="card-text">{{ post.body }}</p>
+            
           </div>
         </div>
       </div>
     </div>
     <!-- End Card -->
-
+    {% endfor %}
+    
   </div>
   <!-- End Left -->
 
@@ -34,12 +36,13 @@
   <div class="col-12 col-lg-4 order-0 order-lg-1">
     
     <!-- Card -->
-    <div class="card mt-3">
-      <div class="card-header">Search</div>
-      <div class="card-body">
-        <!-- Form -->
-        <form action="">
-          <div class="input-group">
+    <div class="position-sticky top-0">
+      <div class="card mt-3">
+        <div class="card-header">Search</div>
+        <div class="card-body">
+          <!-- Form -->
+          <form action="">
+            <div class="input-group">
             <input type="text" class="form-control" placeholder="Enter Search Term..">
             <button type="submit" class="btn btn-primary">Search</button>
           </div>
@@ -47,8 +50,9 @@
         <!-- End Form -->
       </div>
     </div>
+  </div>
     <!-- End Card -->
-
+    
   </div>
   <!-- End Right -->
 </div>
