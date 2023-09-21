@@ -1,7 +1,7 @@
 # (from the app folder, import the instance of app inside the init.py file)
 from app import app
 # Import the render_template module from flask
-from flask import render_template
+from flask import render_template, redirect, url_for
 # import fake posts form fake data
 from fake_data import posts
 # import the signup form from forms.py
@@ -27,7 +27,11 @@ def signup():
         username = form.username.data
         email = form.email.data
         password = form.password.data
-        print(first_name, last_name, username, email, password)
+        
+        # If successful, redirect to the specified page
+        # Call in the function (index)
+        # Import url_for and redirect from flask
+        return redirect(url_for('index'))
     
     # If sign up is unsuccessful
     else:
