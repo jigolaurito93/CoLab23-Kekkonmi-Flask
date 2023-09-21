@@ -14,10 +14,24 @@ def index():
     # Takes 2 arguments, the name of the template AND the variables you want to pass to the template engine as keyword argument arguments
     return render_template('index.html', posts=posts)
 
-@app.route('/signup') #127.0.0.1:5000/signup
+@app.route('/signup', methods=['GET', "POST"]) #127.0.0.1:5000/signup
 def signup():
     # Create an instance of SignUpForm()
     form = SignUpForm()
+
+    # If sign up is successful and all are fields are valid
+    if form.validate_on_submit():
+        # If successful, extract the data from the form fields
+        first_name = form.first_name.data
+        last_name = form.last_name.data
+        username = form.username.data
+        email = form.email.data
+        password = form.password.data
+        print(first_name, last_name, username, email, password)
+    
+    # If sign up is unsuccessful
+    else:
+        print('did not valudate')
     # Pass that form as a variable named form
     return render_template('signup.html', form=form)
 
