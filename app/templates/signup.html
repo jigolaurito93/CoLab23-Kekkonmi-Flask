@@ -6,11 +6,35 @@
   <div class="col">
     <div class="card mt-3">
         <div class="card-body">
-            <form action="">
-                <label for="fname">First Name</label>
-                <input type="text" class="form-control" name="first_name" placeholder="First Name">
+            
+            <!-- Create a Form with a POST request upon submitting it -->
+            <form action="" method="POST">
+                <!--  creates a csrf token that has a hidden field-->
+                {{ form.csrf_token}}
 
-                <input type="submit" class="btn btn-primary mt-3 w-100">
+                <!-- Renders the label text -->
+                {{ form.first_name.label }}
+                <!-- Renders the input field and can modify the class -->
+                {{ form.first_name(class='form-control', placeholder='Enter First Name') }}
+
+                {{ form.last_name.label }}
+                {{ form.last_name(class='form-control', placeholder='Enter Last Name') }}
+       
+                {{ form.username.label }}
+                {{ form.username(class='form-control', placeholder='Enter Username') }}
+                
+                {{ form.email.label }}
+                {{ form.email(class='form-control', placeholder='Enter Email Address') }}
+
+                {{ form.password.label }}
+                {{ form.password(class='form-control', placeholder='Enter Password') }}
+
+                {{ form.confirm_pass.label }}
+                {{ form.confirm_pass(class='form-control', placeholder='Confirm Password') }}
+
+                {{ form.submit(class="form-control btn btn-primary w-100 mt-3") }}
+
+
             </form>
         </div>
     </div>

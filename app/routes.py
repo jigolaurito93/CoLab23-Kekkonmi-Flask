@@ -4,6 +4,8 @@ from app import app
 from flask import render_template
 # import fake posts form fake data
 from fake_data import posts
+# import the signup form from forms.py
+from app.forms import SignUpForm
 
 # Create a decorator
 @app.route('/') #127.0.0.1:5000/
@@ -14,7 +16,10 @@ def index():
 
 @app.route('/signup') #127.0.0.1:5000/signup
 def signup():
-    return render_template('signup.html')
+    # Create an instance of SignUpForm()
+    form = SignUpForm()
+    # Pass that form as a variable named form
+    return render_template('signup.html', form=form)
 
 @app.route('/login') #127.0.0.1:5000/login
 def login():
