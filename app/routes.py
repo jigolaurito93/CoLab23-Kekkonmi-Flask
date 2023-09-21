@@ -5,7 +5,7 @@ from flask import render_template, redirect, url_for, flash
 # import fake posts form fake data
 from fake_data import posts
 # import the signup form from forms.py
-from app.forms import SignUpForm
+from app.forms import SignUpForm, LoginForm
 
 # Create a decorator
 @app.route('/') #127.0.0.1:5000/
@@ -17,6 +17,7 @@ def index():
 @app.route('/signup', methods=['GET', "POST"]) #127.0.0.1:5000/signup
 def signup():
     # Create an instance of SignUpForm()
+    # Import SignUpForm from app.forms
     form = SignUpForm()
 
     # If sign up is successful and all are fields are valid
@@ -45,4 +46,9 @@ def signup():
 
 @app.route('/login') #127.0.0.1:5000/login
 def login():
-    return render_template('login.html')
+    # Create an instance of login form
+    # Import LoginForm from app.forms
+    form = LoginForm()
+
+
+    return render_template('login.html', form=form)
